@@ -1,0 +1,316 @@
+@use 'variables';
+@use 'mixins';
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: variables.$Principal-font;
+    font-weight: 700;
+}
+
+body{
+    background-color: variables.$Grey-200;
+    
+}
+
+
+// ---------> Header <--------- //
+.header{
+    text-align: center;
+
+    &__logo{
+        margin: 50px 0 40px;
+
+        @include mixins.view(1024px){
+            margin: 104px 0 83.5px;
+        }
+
+        @include mixins.view(1280px){
+            margin: 125.4px 0 100.6px;
+        }
+
+        @include mixins.view(1366px){
+            margin: 132.6px 0 106.4px;
+        }
+
+        @include mixins.view(1440px){
+            margin: 138.7px 0 111.3px;
+        }
+    }
+
+}
+
+
+// ---------> Main <--------- //
+main{
+    background-color: variables.$White;
+    border-radius: 20px;
+    width: 375px;
+    margin: 0 auto 60px;
+    padding-bottom: 32px;
+
+    @include mixins.view(1024px){
+        width: 920px;
+        height: 481px;
+        @include mixins.flex-direc-aling-justify(row,none,none);
+        padding-bottom: 0;
+    }
+}
+
+
+// ---------> Calculator Section <--------- //
+.calculator-section{
+    padding: 32px;
+
+    @include mixins.view(1024px){
+        padding: 48px;
+        width: 475px;
+    }
+
+
+    // Global Clases //
+    &__global-container{
+        @include mixins.flex-direc-aling-justify(column, none, none);
+    }
+
+    &__global-title{
+        color: variables.$Grey-500;
+        font-size: 0.875em;
+        
+        @include mixins.view(1024px){
+            font-size: 1em;
+        }
+    }
+
+    &__global-container-ii{
+        @include mixins.flex-direc-aling-justify(row, center, none);
+        position: relative;
+    }
+
+    &__global-icon{
+        position: absolute;
+        left: 18px;
+    }
+    
+    &__global-input{
+        width: 100%;
+        height: 48px;
+        background-color: variables.$Grey-50;
+        border-radius: 4px;
+        text-align: right;
+        caret-color: variables.$Grey-400;
+        padding: 0 18px;
+        font-size: 1.5em;
+        color: variables.$Green-900;
+        margin-top: 8px;
+
+        &:hover{
+            cursor: pointer;
+        }
+
+        &:focus{
+            outline: none;
+            border: 2px solid variables.$Grey-400;
+            padding: 0 16px;
+        }
+
+        &::-webkit-inner-spin-button{
+            -webkit-appearance: none;
+        }
+
+        -moz-appearance: textfield;
+        appearance: textfield;
+
+        &::placeholder{
+            color: variables.$Grey-400;
+        }
+    }
+
+    // Label-Message Container 
+    &__message{
+        margin-left: 45px;
+        color: variables.$Grey-400;
+        display: none;
+
+        @include mixins.view(1024px){
+            margin-left: 82px;
+        }
+    }
+
+    &__message--bill{
+        margin-left: 147px;
+
+        @include mixins.view(1024px){
+            margin-left: 200px;
+        }
+    }
+
+
+    // Select Tip Container //
+    &__tip-container{
+        margin: 30px 0;
+
+        @include mixins.view(1024px){
+            margin: 39px 0;
+        }
+    }
+
+    &__buttons-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap:16px;
+        margin-top: 8px;
+
+        @include mixins.view(1024px){
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 14px;
+        }
+    }
+
+    &__button{
+        height: 48px;
+        width: 147px;
+        border-radius: 4px;
+        font-size: 1.5em;
+        background-color: variables.$Green-900;
+        color: variables.$White;
+        &:hover{
+            cursor: pointer;
+            background-color: variables.$Grey-200;
+            color: variables.$Green-900;
+        }
+
+        @include mixins.view(1024px){
+            width: 117px;
+        }
+        
+    }
+
+    // Class for selected button -->
+    &__button-selected{
+        background-color: variables.$Green-400;
+        color: variables.$Green-900;
+    }
+    // <-- Class for selected button
+
+    &__button--input-n{
+        @extend .calculator-section__global-input;
+        background-color: variables.$Grey-50;
+        color: variables.$Green-900;
+        margin-top: 0;
+        &:hover{
+            background-color: variables.$Grey-50;
+        }
+        &::placeholder{
+            color: variables.$Grey-500;
+        }
+
+        @include mixins.view(1024px){
+            padding: 0;
+            padding-right: 14px;
+
+            &:focus{
+                padding: 0 12px;
+            }
+        }
+    }
+}
+
+
+// ---------> Display Section <--------- //
+.display-section{
+    margin: 0 24px;
+    background-color: variables.$Green-900;
+    border-radius: 20px;
+    padding: 36px 24px 24px;
+
+    @include mixins.view(1024px){
+        margin: 32px 32px 32px 0;
+        width: 413px;
+        padding: 48px 40px 40px;
+    }
+
+
+    &__display{
+        @include mixins.flex-direc-aling-justify(row,center,space-between);
+        margin-bottom: 28px;
+    }
+
+    &__p01{
+        color: variables.$White;
+        font-weight: 600;
+    }
+
+    &__p02{
+        font-size: 0.75em;
+        color: variables.$Grey-400;
+
+        @include mixins.view(1024px){
+            font-size: 0.83em;
+        }
+    }
+
+    &__digit-container{
+        @include mixins.flex-direc-aling-justify(row,center,none);
+    }
+
+    &__dolar-digit{
+        height: 22px;
+        margin: 1px 1px 0 0;
+
+        @include mixins.view(1024px){
+            height: 32px;
+            margin: 2px 1px 0 0;
+        }
+    }
+
+    &__digit{
+        font-size: 1.8em;
+        color: variables.$Green-400;
+
+        @include mixins.view(1024px){
+            font-size: 2.8em;
+        }
+    }
+
+    &__reset-btn{
+        height: 48px;
+        width: 100%;
+        background-color: variables.$Green-400;
+        color: variables.$Green-900;
+        border-radius: 4px;
+        font-size: 1em;
+        margin-top: 9px;
+
+        &:hover{
+            cursor: pointer;
+            background-color: variables.$Grey-200;
+        }
+
+        @include mixins.view(1024px){
+            margin-top: 93px;
+        }
+    }
+}
+
+.attribution{
+    margin-bottom: 20px;
+    &__p{
+        color: variables.$Green-900;
+        font-size: 11px; 
+        text-align: center;
+    }
+
+    &__a{
+        color: variables.$Grey-500;
+        &:hover{
+            color: variables.$Green-400;
+        }
+    }
+
+
+}

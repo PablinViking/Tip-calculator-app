@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+
+  <header class="header">
+    <img class="header__logo" src="images/logo.svg" alt="Logo SPLITTER">
+  </header>
+
+  <main>
+
+    <section class="calculator-section">
+
+      <div 
+      class="calculator-section__bill-container
+      calculator-section__global-container">
+
+        <div>
+          <label class="calculator-section__bill-label calculator-section__global-title" for="bill">Bill</label>
+          <span class="calculator-section__message
+          calculator-section__message--bill
+          calculator-section__global-title">Can't be zero</span>
+        </div>
+
+        <div 
+        class="calculator-section__dollar-bill-container
+        calculator-section__global-container-ii">
+
+          <img class="calculator-section__icon-dollar
+          calculator-section__global-icon" 
+          src="images/icon-dollar.svg" alt="Icon Dollar">
+
+          <input class="calculator-section__bill-input
+          calculator-section__global-input" 
+          id="bill" type="number" min="0" placeholder="0">
+        </div>
+      </div>
+
+      <div class="calculator-section__tip-container">
+        <label class="calculator-section__tip-label calculator-section__global-title">Select Tip %</label>
+        <div class="calculator-section__buttons-container">
+          <button class="calculator-section__button" value="5">5%</button>
+          <button class="calculator-section__button" value="10">10%</button>
+          <button class="calculator-section__button" value="15">15%</button>
+          <button class="calculator-section__button" value="25">25%</button>
+          <button class="calculator-section__button" value="50">50%</button>
+          <input class="calculator-section__button--input-n" type="number" placeholder="Custom">
+        </div>
+      </div>
+
+      <div 
+      class="calculator-section__n-people-container
+      calculator-section__global-container">
+
+        <div class="calculator-section__label-mess-container">
+          <label class="calculator-section__n-people-label calculator-section__global-title" for="n-people">Number of People</label>
+          <span class="calculator-section__message 
+          calculator-section__global-title">Can't be zero</span>
+        </div>
+
+        <div 
+        class="calculator-section__people-number-container
+        calculator-section__global-container-ii">
+
+          <img class="calculator-section__icon-person
+          calculator-section__global-icon" 
+          src="images/icon-person.svg" alt="Icon Person">
+
+          <input class="calculator-section__n-people-input
+          calculator-section__global-input"
+          id="n-people" type="number" min="1" placeholder="0">
+        </div>
+      </div>
+    </section>
+
+    <section class="display-section">
+      <div class="display-section__display">
+        <div class="display-section__info-container">
+          <p class="display-section__p01">Tip Amount</p>
+          <p class="display-section__p02">/ person</p>
+        </div>
+        <div class="display-section__digit-container">
+          <img class="display-section__dolar-digit" src="images/icon-dollar.svg" alt="Icon Dolar">
+          <p class="display-section__digit display-section__digit--tip-amount">0.00</p>
+        </div>
+      </div>
+
+      <div class="display-section__display">
+        <div class="display-section__info-container">
+          <p class="display-section__p01">Total</p>
+          <p class="display-section__p02">/ person</p>
+        </div>
+        <div class="display-section__digit-container">
+          <img class="display-section__dolar-digit" src="images/icon-dollar.svg" alt="Icon Dolar">
+          <p class="display-section__digit display-section__digit--total">0.00</p>
+        </div>
+      </div>
+
+      <button class="display-section__reset-btn">RESET</button>
+    </section>
+  </main>
+
+  
+  <footer class="attribution">
+    <p class="attribution__p">
+      Challenge by <a class="attribution__a" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a class="attribution__a" target="_blank" href="https://github.com/PablinViking">Pablo Boichenko</a>.
+    </p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

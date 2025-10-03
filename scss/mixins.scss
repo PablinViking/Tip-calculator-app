@@ -1,0 +1,14 @@
+@use 'variables';
+
+@mixin flex-direc-aling-justify($direction, $aling, $justify){
+    display: flex;
+    flex-direction: $direction;
+    align-items: $aling;
+    justify-content: $justify;
+}
+
+@mixin view($width){
+    @media screen and (min-width: $width) {
+        @content
+    }
+}
